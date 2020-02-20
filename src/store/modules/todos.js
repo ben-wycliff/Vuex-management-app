@@ -1,3 +1,5 @@
+import Axios from "axios";
+
 // import axios from 'axios';
 
 const state = {
@@ -17,9 +19,17 @@ const getters = {
     allTodos: (state) => state.todos
 };
 
-const actions = {};
+const actions = {
+     async fetchTodos({ commit }) {
+        const res = await Axios.get('https://jsonplaceholder.typicode.com/todos');
+        console.log(res.data);
+        commit('setTodos', res.data)
+     }
+};
 
-const mutations = {};
+const mutations = {
+    setTodos: (state, todos) => (state.todos=todos)
+};
 
 export default {
     state,
