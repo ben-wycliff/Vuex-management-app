@@ -20,6 +20,9 @@ export default {
 </script>
 
 <style>
+*{
+  font-family: 'Quicksand', fantasy ;
+}
 body {
   line-height: 1.6;
   background: #e8f7f0;
