@@ -10,6 +10,9 @@
     </div>
 </template>
 <style scoped>
+h1 {
+    text-align: center;
+}
 form {
     display: flex;
 }

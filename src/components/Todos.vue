@@ -11,6 +11,9 @@
 </template>
 
 <style scoped>
+h1 {
+    text-align: center;
+}
 .todos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

@@ -1,5 +1,5 @@
 import Axios from "axios";
-
+/* eslint-disable */
 // import axios from 'axios';
 
 const state = {
@@ -33,10 +33,15 @@ const actions = {
      async removeTodo({ commit }, id){
          await Axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`);
          commit('deleteTodo', id)
-     }
+     },
 
+     async filterTodos({ commit }, e) {
+       const val = Number(e.target.options[event.target.options.selectedIndex].innerText);
+       const res = await Axios.get(`https://jsonplaceholder.typicode.com/todos?_limit=${val}`);
+       commit('setTodos', res.data)
+      }
 };
-
+ 
 const mutations = {
     setTodos: (state, todos) => state.todos=todos,
     newTodo: (state, todo) => state.todos.unshift(todo),
